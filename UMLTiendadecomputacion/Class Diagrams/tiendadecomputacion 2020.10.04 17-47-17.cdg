@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tiendadecomputacion">
+  <ClassDiagramComponents>
+    <Class name="Componente" package="tienda" visibility="public" isAbstract="true" xPosition="484.0" yPosition="122.0">
+      <Fields>
+        <Field name="utilizable" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getUtilizable" returnType="String" visibility="public"/>
+        <Method name="setUtilizable" returnType="void" visibility="public">
+          <Argument type="String" name="utilizable"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Computadora" package="tienda" visibility="public" isAbstract="true" xPosition="43.0" yPosition="840.0">
+      <Fields>
+        <Field name="disco" type="DiscoRigido" visibility="private"/>
+        <Field name="ram" type="Ram" visibility="private"/>
+        <Field name="video" type="PlacaDeVideo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="DiscoRigido" name="disco"/>
+          <Argument type="Ram" name="ram"/>
+          <Argument type="PlacaDeVideo" name="video"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getDisco" returnType="DiscoRigido" visibility="public"/>
+        <Method name="setDisco" returnType="void" visibility="public">
+          <Argument type="DiscoRigido" name="disco"/>
+        </Method>
+        <Method name="getRam" returnType="Ram" visibility="public"/>
+        <Method name="setRam" returnType="void" visibility="public">
+          <Argument type="Ram" name="ram"/>
+        </Method>
+        <Method name="getVideo" returnType="PlacaDeVideo" visibility="public"/>
+        <Method name="setVideo" returnType="void" visibility="public">
+          <Argument type="PlacaDeVideo" name="video"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Control" package="tienda" visibility="public" xPosition="354.0" yPosition="34.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="ejecutar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DiscoRigido" package="tienda" visibility="public" xPosition="1427.0" yPosition="1124.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="capacidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="tipo"/>
+          <Argument type="String" name="capacidad"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="getCapacidad" returnType="String" visibility="public"/>
+        <Method name="setCapacidad" returnType="void" visibility="public">
+          <Argument type="String" name="capacidad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Laptop" package="tienda" visibility="public" xPosition="1242.0" yPosition="1454.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="pantalla" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="pantalla"/>
+          <Argument type="DiscoRigido" name="disco"/>
+          <Argument type="Ram" name="ram"/>
+          <Argument type="PlacaDeVideo" name="video"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getPantalla" returnType="String" visibility="public"/>
+        <Method name="setPantalla" returnType="void" visibility="public">
+          <Argument type="String" name="pantalla"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="tienda" visibility="public" xPosition="1271.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="tienda" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="opcion" type="int" visibility="package"/>
+        <Field name="listaProductos" type="ArrayList&lt;Producto&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="saludar" returnType="void" visibility="public">
+          <Argument type="Sistema" name="sistemas"/>
+        </Method>
+        <Method name="agregar" returnType="void" visibility="public">
+          <Argument type="Sistema" name="sistema"/>
+        </Method>
+        <Method name="agregarComponentes" returnType="void" visibility="public">
+          <Argument type="Sistema" name="sistemas"/>
+        </Method>
+        <Method name="ingresarLaptop" returnType="Laptop" visibility="public"/>
+        <Method name="ingresarPeriferico" returnType="Periferico" visibility="public"/>
+        <Method name="ingresarDatosDiscoRigido" returnType="DiscoRigido" visibility="public"/>
+        <Method name="ingresarDatosProcesadorDesktop" returnType="ProcesadorDesktop" visibility="public"/>
+        <Method name="ingresarDatosProcesadorLaptop" returnType="ProcesadorLaptop" visibility="public"/>
+        <Method name="ingresarDatosRam" returnType="Ram" visibility="public"/>
+        <Method name="ingresarDatosPlacaDeVideo" returnType="PlacaDeVideo" visibility="public"/>
+        <Method name="ingresarDatosComponentes" returnType="void" visibility="public">
+          <Argument type="Componente" name="componente"/>
+        </Method>
+        <Method name="ingresarDatosProductos" returnType="void" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="listarProductos" returnType="void" visibility="public"/>
+        <Method name="vender" returnType="void" visibility="public">
+          <Argument type="Sistema" name="sistemas"/>
+        </Method>
+        <Method name="borrarProducto" returnType="Producto" visibility="public">
+          <Argument type="Producto" name="producto"/>
+          <Argument type="Sistema" name="sistemas"/>
+        </Method>
+        <Method name="existeProducto" returnType="boolean" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="hayDiezStock" returnType="boolean" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="fechaSuperior" returnType="boolean" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="calcularPrecioDesktop" returnType="float" visibility="public">
+          <Argument type="Producto" name="pd"/>
+          <Argument type="Producto" name="hd"/>
+          <Argument type="Producto" name="ram"/>
+          <Argument type="Producto" name="pv"/>
+        </Method>
+        <Method name="calcularPreciolaptop" returnType="float" visibility="public">
+          <Argument type="Producto" name="pl"/>
+          <Argument type="Producto" name="hd"/>
+          <Argument type="Producto" name="ram"/>
+          <Argument type="Producto" name="pv"/>
+          <Argument type="Producto" name="laptop"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Periferico" package="tienda" visibility="public" xPosition="1485.0" yPosition="802.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PlacaDeVideo" package="tienda" visibility="public" xPosition="-29.0" yPosition="1787.0">
+      <Fields>
+        <Field name="fabricante" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="memoria" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fabricante"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="memoria"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFabricante" returnType="String" visibility="public"/>
+        <Method name="setFabricante" returnType="void" visibility="public">
+          <Argument type="String" name="fabricante"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getMemoria" returnType="String" visibility="public"/>
+        <Method name="setMemoria" returnType="void" visibility="public">
+          <Argument type="String" name="memoria"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProcesadorDesktop" package="tienda" visibility="public" xPosition="655.0" yPosition="1787.0">
+      <Fields>
+        <Field name="fabricante" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="frecuencia" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fabricante"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="frecuencia"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFabricante" returnType="String" visibility="public"/>
+        <Method name="setFabricante" returnType="void" visibility="public">
+          <Argument type="String" name="fabricante"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getFrecuencia" returnType="String" visibility="public"/>
+        <Method name="setFrecuencia" returnType="void" visibility="public">
+          <Argument type="String" name="frecuencia"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProcesadorLaptop" package="tienda" visibility="public" xPosition="1405.0" yPosition="1787.0">
+      <Fields>
+        <Field name="fabricante" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="frecuencia" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fabricante"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="frecuencia"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="fabricante"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="frecuencia"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFabricante" returnType="String" visibility="public"/>
+        <Method name="setFabricante" returnType="void" visibility="public">
+          <Argument type="String" name="fabricante"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getFrecuencia" returnType="String" visibility="public"/>
+        <Method name="setFrecuencia" returnType="void" visibility="public">
+          <Argument type="String" name="frecuencia"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="tienda" visibility="public" isAbstract="true" xPosition="572.0" yPosition="474.0">
+      <Fields>
+        <Field name="precioUnitario" type="float" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPrecioUnitario" returnType="float" visibility="public"/>
+        <Method name="setPrecioUnitario" returnType="void" visibility="public">
+          <Argument type="float" name="precioUnitario"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="getFecha" returnType="Date" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="Date" name="fecha"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ram" package="tienda" visibility="public" xPosition="224.0" yPosition="1350.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="tecnologia" type="String" visibility="private"/>
+        <Field name="frecuencia" type="String" visibility="private"/>
+        <Field name="capacidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="tecnologia"/>
+          <Argument type="String" name="frecuencia"/>
+          <Argument type="String" name="capacidad"/>
+          <Argument type="float" name="precioUnitario"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="Date" name="fecha"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getTecnologia" returnType="String" visibility="public"/>
+        <Method name="setTecnologia" returnType="void" visibility="public">
+          <Argument type="String" name="tecnologia"/>
+        </Method>
+        <Method name="getFrecuencia" returnType="String" visibility="public"/>
+        <Method name="setFrecuencia" returnType="void" visibility="public">
+          <Argument type="String" name="frecuencia"/>
+        </Method>
+        <Method name="getCapacidad" returnType="String" visibility="public"/>
+        <Method name="setCapacidad" returnType="void" visibility="public">
+          <Argument type="String" name="capacidad"/>
+        </Method>
+        <Method name="toTextoArchivo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Sistema" package="tienda" visibility="public" xPosition="1156.0" yPosition="248.0">
+      <Fields>
+        <Field name="productos" type="ArrayList&lt;Producto&gt;" visibility="private"/>
+        <Field name="usuarios" type="ArrayList&lt;Usuario&gt;" visibility="private"/>
+        <Field name="sistema" type="Sistema" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getProductos" returnType="ArrayList&lt;Producto&gt;" visibility="public"/>
+        <Method name="setProductos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="productos"/>
+        </Method>
+        <Method name="getSistamaInstance" returnType="Sistema" visibility="public" isStatic="true"/>
+        <Method name="deSerializar" returnType="Sistema" visibility="public">
+          <Argument type="String" name="a"/>
+        </Method>
+        <Method name="serializar" returnType="void" visibility="public">
+          <Argument type="String" name="a"/>
+        </Method>
+        <Method name="buscarPersona" returnType="Usuario" visibility="public">
+          <Argument type="String" name="datos"/>
+        </Method>
+        <Method name="getUsuarios" returnType="ArrayList&lt;Usuario&gt;" visibility="public"/>
+        <Method name="setUsuarios" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Usuario&gt;" name="usuarios"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="tienda" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="user" type="String" visibility="private"/>
+        <Field name="pass" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUser" returnType="String" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+        <Method name="getPass" returnType="String" visibility="public"/>
+        <Method name="setPass" returnType="void" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Stockeable" package="tienda" visibility="public" xPosition="857.0" yPosition="7.0">
+      <Methods>
+        <Method name="listar" returnType="void" visibility="public"/>
+        <Method name="agregar" returnType="void" visibility="public">
+          <Argument type="String" name="articulo"/>
+        </Method>
+        <Method name="vender" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="tienda.DiscoRigido" target="tienda.Componente"/>
+    <UseRelation source="tienda.Menu" target="tienda.DiscoRigido" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Sistema" target="tienda.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaProductos" source="tienda.Menu" target="tienda.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Producto&gt;"/>
+    <HasRelation name="sistema" source="tienda.Sistema" target="tienda.Sistema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Computadora" target="tienda.DiscoRigido" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="productos" source="tienda.Sistema" target="tienda.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Producto&gt;"/>
+    <UseRelation source="tienda.Menu" target="tienda.Periferico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tienda.PlacaDeVideo" target="tienda.Componente"/>
+    <IsRelation name="is" source="tienda.Periferico" target="tienda.Producto"/>
+    <HasRelation name="ram" source="tienda.Computadora" target="tienda.Ram" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Computadora" target="tienda.Ram" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Sistema" target="tienda.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Menu" target="tienda.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Menu" target="tienda.Sistema" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tienda.Componente" target="tienda.Producto"/>
+    <HasRelation name="disco" source="tienda.Computadora" target="tienda.DiscoRigido" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Menu" target="tienda.ProcesadorDesktop" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Sistema" target="tienda.Sistema" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tienda.Computadora" target="tienda.Producto"/>
+    <UseRelation source="tienda.Menu" target="tienda.Laptop" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarios" source="tienda.Sistema" target="tienda.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Usuario&gt;"/>
+    <IsRelation name="is" source="tienda.Laptop" target="tienda.Computadora"/>
+    <IsRelation name="is" source="tienda.Ram" target="tienda.Componente"/>
+    <UseRelation source="tienda.Menu" target="tienda.ProcesadorLaptop" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Menu" target="tienda.Ram" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tienda.ProcesadorLaptop" target="tienda.Componente"/>
+    <UseRelation source="tienda.Menu" target="tienda.Componente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tienda.Computadora" target="tienda.PlacaDeVideo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tienda.ProcesadorDesktop" target="tienda.Componente"/>
+    <UseRelation source="tienda.Menu" target="tienda.PlacaDeVideo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="video" source="tienda.Computadora" target="tienda.PlacaDeVideo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
